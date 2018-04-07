@@ -8,6 +8,7 @@ RSpec.describe "Creating a location", type: :system do
   end
 
   scenario "Creating a valid location" do
+    region = create :region
     location = build :location,
       name: "TD Garden",
       street_address_1: "100 Legends Way",
@@ -29,8 +30,10 @@ RSpec.describe "Creating a location", type: :system do
         state: location.state,
         zip_code: location.zip_code
       },
-      name: location.name
+      name: location.name,
+      region: region.name
     )
+
     create_page.submit
 
     submitted_location = Location.find_by(
@@ -39,7 +42,8 @@ RSpec.describe "Creating a location", type: :system do
       street_address_2: location.street_address_2,
       city: location.city,
       state: location.state,
-      zip_code: location.zip_code
+      zip_code: location.zip_code,
+      region: region
     )
 
     expect(create_page).to have_created_location submitted_location

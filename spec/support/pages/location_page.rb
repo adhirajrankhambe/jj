@@ -8,7 +8,7 @@ module Pages
     end
 
     def has_details_for?(location)
-      contains_name?(location) && contains_address_information?(location)
+      contains_name?(location) && contains_address_information?(location) && contains_region?(location)
     end
 
     private
@@ -43,6 +43,10 @@ module Pages
 
     def contains_zip_code?(location)
       page.has_css?("dd.location-zip-code", text: location.zip_code)
+    end
+
+    def contains_region?(location)
+      page.has_css?("dd.location-region", text: location.region.name)
     end
   end
 end
