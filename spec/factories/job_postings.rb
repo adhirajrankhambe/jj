@@ -1,6 +1,7 @@
 FactoryBot.define do
   factory :job_posting do
     title "Software Developer"
+    description "Lorem ipsum dolor sit amet, consectetur adipiscing elit."
     job_poster
     category
     location
