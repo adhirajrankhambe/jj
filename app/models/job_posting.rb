@@ -10,8 +10,11 @@ class JobPosting < ApplicationRecord
   }
 
   validates :title, presence: true
+  validates :description, presence: true
 
   after_initialize :set_defaults
+
+  self.per_page = 10
 
   private
 

@@ -1,7 +1,13 @@
 en:
+  regions:
+    form:
+      create: Add Region
+    region_heading:
+      title: Region
   locations:
     form:
       create: Add Location
+      region_prompt: Select Region
     location_heading:
       title: Location
     show:
@@ -11,6 +17,7 @@ en:
       city: City
       state: State
       zip_code: Zip Code
+      region: Region
   job_postings:
     form:
       category_prompt: Select Category
@@ -23,6 +30,7 @@ en:
         edit: Edit
         new_job: Add New Job
         new_location: Add New Location
+        new_region: Add New Region
         view: View
       actions: Actions
       category: Category

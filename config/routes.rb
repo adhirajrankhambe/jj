@@ -11,6 +11,7 @@ Rails.application.routes.draw do
       resources :job_posting_statuses, only: [:index]
       resources :job_postings, only: [:create, :index]
       resources :locations, only: [:index]
+      resources :regions, only: [:index]
     end
   end
 end
