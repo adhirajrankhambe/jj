@@ -1,4 +1,4 @@
-class JobPostingDecorator < Draper::Decorator
+class JobPostingDecorator < ApplicationDecorator
   delegate_all
   decorates_association :location
 

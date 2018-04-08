@@ -2,16 +2,16 @@
   <h1><%= t(".title") %></h1>
 </div>
 
-<table class="table">
+<table id="job-postings" class="tablesorter tablesorter-blue table">
   <thead>
     <tr>
-      <th><%= t(".date") %></th>
-      <th><%= t(".job_title") %></th>
-      <th><%= t(".poster") %></th>
-      <th><%= t(".category") %></th>
-      <th><%= t(".location") %></th>
-      <th><%= t(".status") %></th>
-      <th><%= t(".actions") %></th>
+      <th><span class="posting-date"><%= t(".date") %></span></th>
+      <th><span class="posting-title"><%= t(".job_title") %></span></th>
+      <th><span class="posting-poster"><%= t(".poster") %></span></th>
+      <th><span class="posting-category"><%= t(".category") %></span></th>
+      <th><span class="posting-location"><%= t(".location") %></span></th>
+      <th><span class="posting-status"><%= t(".status") %></span></th>
+      <th><span class="posting-actions"><%= t(".actions") %></span></th>
   </thead>
   <tbody>
     <% @job_postings.each do |posting| %>
@@ -30,6 +30,8 @@
     <% end %>
   </tbody>
 </table>
+
+<%= will_paginate @job_postings %>
 
 <div class="actions">
   <%= link_to t(".action.new_job"), new_job_posting_path, class: "btn btn-primary" %>

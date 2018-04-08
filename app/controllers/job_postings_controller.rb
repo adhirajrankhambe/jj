@@ -14,8 +14,8 @@ class JobPostingsController < ApplicationController
   def edit; end
 
   def index
-    @job_postings = JobPosting.all
-      .includes(:job_poster, :category, :location)
+    @job_postings = JobPosting.includes(:job_poster, :category, :location)
+      .paginate(:page => params[:page])
       .decorate
   end
 

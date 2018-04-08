@@ -14,6 +14,8 @@ class JobPosting < ApplicationRecord
 
   after_initialize :set_defaults
 
+  self.per_page = 10
+
   private
 
   def set_defaults

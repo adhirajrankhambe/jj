@@ -1,4 +1,4 @@
-class LocationDecorator < Draper::Decorator
+class LocationDecorator < ApplicationDecorator
   delegate_all
 
   def full_address(delimeter = "\n")
